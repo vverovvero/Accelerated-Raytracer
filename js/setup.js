@@ -26,30 +26,42 @@ function setup_canvas(width, height){
     data = ctx.getImageData(0, 0, width, height);
 }
 
+//disable button
+function disableSizeButton(){
+    document.getElementById("size_A").disabled = true;
+    document.getElementById("size_B").disabled = true;
+    document.getElementById("size_C").disabled = true;
+    document.getElementById("size_D").disabled = true;
+}
+
 
 //set automatic globals
 function size_A(){
     width = 160;
     height = 120;
     setup_canvas(width, height);
+    disableSizeButton();
 }
 
 function size_B(){
     width = 320;
     height = 240;
     setup_canvas(width, height);
+    disableSizeButton();
 }
 
 function size_C(){
     width = 640;
     height = 480;
     setup_canvas(width, height);
+    disableSizeButton();
 }
 
 function size_D(){
     width = 960;
     height = 720;
     setup_canvas(width, height);
+    disableSizeButton();
 }
 
 

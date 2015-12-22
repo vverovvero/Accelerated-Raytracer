@@ -389,6 +389,10 @@ function load_spheres(){
 
 //////////////////////loading scene//////////////////////////
 
+function disableSceneButton(){
+	document.getElementById("load_scene").disabled = true;
+}
+
 function load_scene(){
 	var scene_tag = document.getElementById("scene_tag").value;
 	if(scene_tag == "scene0"){
@@ -472,6 +476,7 @@ function load_scene(){
 		var buddha = new buddha_obj();
 		addPrimitive(buddha, 7);
 	}
+	disableSceneButton();
 }
 
 
@@ -678,13 +683,21 @@ function init_kd_tree(scene){
 
 /////////////////////////////////////////////////////////////////
 /////////////////setting acceleration////////////////////////////
+
+function disableAccelerationButton(){
+	document.getElementById("accelerationOn").disabled = true;
+	document.getElementById("accelerationOff").disabled = true;
+}
+
 function accelerationOn(scene){
 	scene.accelerationBool = true;
 	init_kd_tree(scene);
+	disableAccelerationButton();
 }
 
 function accelerationOff(scene){
 	scene.accelerationBool = false;
+	disableAccelerationButton();
 }
 
 
