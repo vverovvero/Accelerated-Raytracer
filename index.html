@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML>
+<html>
+  <head>
+  </head> 
+  <h1>
+    Accelerated Raytracing 
+  </h1>
+  In this modified raytracer, accelerated and unaccelerated render times can be compared.  
+  <br>
+  If acceleration is selected, the k-d tree is displayed in console.  
+  Building the tree can take a while if the scene selected is complex.
+  <br>
+  Build times and render times are displayed as an alert.
+  <br>
+   REFRESH to clear the scene if you want to make a new image.  <br>
+   Rendering will take a while.  Progress displayed in console.
+   <br>
+   <br>
+   <h2> Follow steps to render </h2>
+   Select canvas size (width x height, in pixels):
+  <button onclick="size_A()"> 160 x 120 </button>
+  <button onclick="size_B()"> 320 x 240</button>
+  <button onclick="size_C()"> 640 x 240</button>
+  <button onclick="size_D()"> 960 x 720</button>
+
+   <br>
+   Select scene to render, then hit load (click button only once):
+   <select id="scene_tag">
+      <option value="scene0"> Default empty room </option>
+      <option value="scene1"> Spheres, glass </option>
+      <option value="scene2"> Humanoid, diffuse red </option>
+      <option value="scene3"> Humanoid, diffuse blue </option>
+      <option value="scene4"> Humanoid, mirror </option>
+      <option value="scene5"> Teddy bear, metallic gold </option>
+      <option value="scene6"> Teddy bear, mirror </option>
+      <option value="scene7"> Teddy bear, glass </option>
+      <option value="scene8"> Bunny, soft pink </option>
+      <option value="scene9"> Bunny, glass </option>
+      <option value="scene10"> Bunny, glossy red </option>
+      <option value="scene11"> Bunny, metallic gold </option>
+      <option value="scene12"> Bunny, aquamarine </option>
+      <option value="scene13"> Dragon, glossy red </option>
+      <option value="scene14"> Dragon, mirror </option>
+      <option value="scene15"> Dragon, glass </option>
+      <option value="scene16"> Dragon, metallic gold </option>
+      <option value="scene17"> Dragon, aquamarine </option>
+      <option value="scene18"> Happy Buddha, soft pink </option>
+      <option value="scene19"> Happy Buddha, glossy green </option>
+      <option value="scene20"> Happy Buddha, glossy red </option>
+    </select>
+
+    <button onclick="load_scene()"> Load selected scene </button>
+
+   <br>
+   Select to turn on acceleration, or turn off acceleration:
+   <button onclick="accelerationOn(scene)">Turn on acceleration </button>
+   <button onclick="accelerationOff(scene)">Turn off acceleration </button>
+   <br>
+   Render!
+   <button onclick="render(scene)">Make the picture </button>
+  <canvas id="c" width="1200" height="900"></canvas>
+  <script src="js/vector.js"> </script>
+  <script src="js/obj_bunny.js"> </script> 
+  <script src="js/obj_humanoid.js"> </script> 
+  <script src="js/obj_teddy_bear.js"> </script> 
+  <script src="js/obj_dragon.js"> </script>
+  <script src="js/obj_buddha.js"> </script>
+  <script src="js/triangleBB.js"> </script>
+  <script src="js/acceleration.js"> </script>
+  <script src="js/setup.js">	</script> <! no scaling of chunky pixels>
+  <script src="js/scene-orig.js"> </script> <! test scene for changing lights, reflectances, tone mapping>
+  <script src="js/render.js">	</script> <! uses brute force antialiasing, so slow >
+  <script src="js/trace.js">	</script> 
+  <script src="js/intersectScene.js">	</script>
+  <script src="js/unaccelerated_intersectScene.js"> </script>
+  <script src="js/sphere.js"> </script>
+  <script src="js/surface.js">	</script> <! allows lights to have colors >
+  <script src="js/shadow.js"> </script> <! issues in literate ray tracer fixed >
+  <script src="js/tonemap.js"> </script> <! make sure scene fits range 0-255 with multiple lights on>
+  <script src="js/objectnormal.js"> </script> <! separated out to allow procedural normal mapping >
+  <script src="js/tri.js"> </script> <! triangle intersection >
+  
+	
+  </body>
+</html>   
