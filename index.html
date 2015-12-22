@@ -18,10 +18,10 @@
    <br>
    <h2> Follow steps to render </h2>
    Select canvas size (width x height, in pixels):
-  <button onclick="size_A()"> 160 x 120 </button>
-  <button onclick="size_B()"> 320 x 240</button>
-  <button onclick="size_C()"> 640 x 240</button>
-  <button onclick="size_D()"> 960 x 720</button>
+  <button id="size_A" onclick="size_A(); "> 160 x 120 </button>
+  <button id="size_B" onclick="size_B()"> 320 x 240</button>
+  <button id="size_C" onclick="size_C()"> 640 x 240</button>
+  <button id="size_D" onclick="size_D()"> 960 x 720</button>
 
    <br>
    Select scene to render, then hit load (click button only once):
@@ -49,12 +49,12 @@
       <option value="scene20"> Happy Buddha, glossy red </option>
     </select>
 
-    <button onclick="load_scene()"> Load selected scene </button>
+    <button id="load_scene" onclick="load_scene()"> Load selected scene </button>
 
    <br>
    Select to turn on acceleration, or turn off acceleration:
-   <button onclick="accelerationOn(scene)">Turn on acceleration </button>
-   <button onclick="accelerationOff(scene)">Turn off acceleration </button>
+   <button id="accelerationOn" onclick="accelerationOn(scene)">Turn on acceleration </button>
+   <button id="accelerationOff" onclick="accelerationOff(scene)">Turn off acceleration </button>
    <br>
    Render!
    <button onclick="render(scene)">Make the picture </button>
